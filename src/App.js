@@ -164,7 +164,7 @@ const App = () => {
   // useEffect(() => {
   //   getUserVoice();
   // }, []);
-  const voices = speechSynthesis.getVoices();
+  // const voices = speechSynthesis.getVoices();
 
   // const getUserVoice = () => {
   //     setActiveSpeaker({ name: 'user' });
