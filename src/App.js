@@ -218,9 +218,9 @@ const App = () => {
     const updatedChatLog = [...chatLog, { user: inputText, response: quote, responder: 'gir' }];
     setChatLog(updatedChatLog);
     // speakText(inputText);
-    setActiveSpeaker({ name: 'gir' });
+    // setActiveSpeaker({ name: 'gir' });
     // speakText(quote,'gir');
-    setActiveSpeaker({ name: 'user' });
+    // setActiveSpeaker({ name: 'user' });
     setInputText('');
     inputRef.current.focus();
   };
@@ -230,9 +230,9 @@ const App = () => {
     const updatedChatLog = [...chatLog, { user: inputText, response: quote, responder: 'zim' }];
     setChatLog(updatedChatLog);
     // speakText(inputText);
-    setActiveSpeaker({ name: 'zim' });
+    // setActiveSpeaker({ name: 'zim' });
     // speakText(quote,'zim');
-    setActiveSpeaker({ name: 'user' });
+    // setActiveSpeaker({ name: 'user' });
     setInputText('');
     inputRef.current.focus();
   };
