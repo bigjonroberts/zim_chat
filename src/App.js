@@ -144,7 +144,7 @@ const App = () => {
   const [inputText, setInputText] = useState('');
   const inputRef = useRef(null);
   const [chatLog, setChatLog] = useState([]);
-  const [activeSpeaker, setActiveSpeaker] = useState('user');
+  // const [activeSpeaker, setActiveSpeaker] = useState('user');
 
   const SpeakerImage = ({ speakerName }) => {
     const getImageUrl = () => {
@@ -174,31 +174,31 @@ const App = () => {
     setInputText(event.target.value);
   };
 
-  const getGirVoice = () => ({ name: 'gir', voice: voices.find((voice) => voice.name === 'Google US English') });
-  const getZimVoice = () => ({ name: 'zim', voice: voices.find((voice) => voice.name === 'Microsoft David Desktop - English (United States)') });
+  // const getGirVoice = () => ({ name: 'gir', voice: voices.find((voice) => voice.name === 'Google US English') });
+  // const getZimVoice = () => ({ name: 'zim', voice: voices.find((voice) => voice.name === 'Microsoft David Desktop - English (United States)') });
 
-  const speakText = (text,voice) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
+  // const speakText = (text,voice) => {
+  //   if ('speechSynthesis' in window) {
+  //     const utterance = new SpeechSynthesisUtterance(text);
+  //     utterance.lang = 'en-US';
 
-      switch (voice) {
-        case 'gir':
-          utterance.voice = getGirVoice().voice;
-          break;
-        case 'zim':
-          utterance.voice = getZimVoice().voice;
-          break;
-        default:
-          // utterance.voice = getUserVoice().voice;
-          break;
-      }
+  //     switch (voice) {
+  //       case 'gir':
+  //         utterance.voice = getGirVoice().voice;
+  //         break;
+  //       case 'zim':
+  //         utterance.voice = getZimVoice().voice;
+  //         break;
+  //       default:
+  //         // utterance.voice = getUserVoice().voice;
+  //         break;
+  //     }
       
-      speechSynthesis.speak(utterance);
-    } else {
-      console.log('Speech synthesis is not supported in this browser.');
-    }
-  };
+  //     speechSynthesis.speak(utterance);
+  //   } else {
+  //     console.log('Speech synthesis is not supported in this browser.');
+  //   }
+  // };
 
   // const handleTalk = async (subject) => {
   //   const quote = getRandomQuote(girQuotes);
