@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifiers>win-x86</RuntimeIdentifiers>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <!-- <ImplicitUsings>enable</ImplicitUsings> -->
+    <!-- <Nullable>enable</Nullable> -->
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.SystemTextJson" Version="1.1.23" />
+    <!-- <PackageReference Include="fsHttp" Version="10.0.0" /> -->
+    <PackageReference Include="FsToolkit.ErrorHandling.TaskResult" Version="4.9.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.18.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.12.0" OutputItemType="Analyzer" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.13" />
+    <!-- <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.2.0" /> -->
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Thoth.Json.Net" Version="11.0.0" />
+    <!-- <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.8.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.13" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0" /> -->
+    <!-- <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Http" Version="3.2.0" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Codec.fs" />
+    <Compile Include="ChatGPT.fs" />
+    <Compile Include="Execute.fs" />
+    <Compile Include="chat.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\snake_case\snake_case.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Threading.ExecutionContext" Alias="ExecutionContext" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="7.0.300" />
+  </ItemGroup>
+</Project>
